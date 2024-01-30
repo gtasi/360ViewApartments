@@ -142,24 +142,6 @@ const RoomSection = () => {
               />
             );
           })}
-          <RoomItem
-            title="Deluxe Room"
-            price="50€"
-            size="30"
-            capacity="5"
-            bed="King Beds"
-            services="Wifi, Television, Bathroom,..."
-            image={roomb3}
-          />
-          <RoomItem
-            title="Family Room"
-            price="50€"
-            size="30"
-            capacity="5"
-            bed="King Beds"
-            services="Wifi, Television, Bathroom,..."
-            image={roomb4}
-          />
         </Row>
       </Container>
     </section>

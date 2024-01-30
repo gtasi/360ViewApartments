@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import "../../assets/css/bootstrap.min.css";
-import roomb1 from "../../assets/img/room/room-b1.jpg";
-import roomb2 from "../../assets/img/room/room-b2.jpg";
 import roomb3 from "../../assets/img/room/room-b3.jpg";
 import roomb4 from "../../assets/img/room/room-b4.jpg";
 import "../../App.css";

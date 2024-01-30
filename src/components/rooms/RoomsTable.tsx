@@ -1,5 +1,5 @@
 import { collection, getDocs } from "firebase/firestore/lite";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import db from "../../backend/firebaseConfig";
 import RoomData from "./RoomData";
 

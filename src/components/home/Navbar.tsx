@@ -1,4 +1,3 @@
-import React from "react";
 import flag from "../../assets/img/flag.jpg";
 import { Link } from "react-router-dom";
 

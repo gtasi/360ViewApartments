@@ -1,4 +1,3 @@
-import React from "react";
 import testimonial from "../../assets/img/testimonial-logo.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

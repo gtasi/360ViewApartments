@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import "../../assets/css/bootstrap.min.css";
-import roomb3 from "../../assets/img/room/room-b3.jpg";
-import roomb4 from "../../assets/img/room/room-b4.jpg";
 import "../../App.css";
 import { collection, getDocs } from "firebase/firestore/lite";
 import db from "../../backend/firebaseConfig";

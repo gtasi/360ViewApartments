@@ -9,6 +9,7 @@ import Book from "./screens/Book";
 import Contact from "./screens/Contact";
 import Navbar from "./components/home/Navbar";
 import Footer from "./components/home/Footer";
+import React from "react";
 
 function App() {
   return (

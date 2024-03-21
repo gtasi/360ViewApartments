@@ -7,10 +7,10 @@ const ContactForm = () => {
             <div className="col-lg-4">
               <div className="contact-text">
                 <h2>Contact Info</h2>
-                <p>
+                {/* <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+                </p> */}
                 <table>
                   <tbody>
                     <tr>

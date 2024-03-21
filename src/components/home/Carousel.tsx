@@ -6,8 +6,12 @@ import hero2 from "../../assets/img/hero/hero-2.jpg";
 import hero3 from "../../assets/img/hero/hero-3.jpg";
 import "../../App.css";
 import { Form } from "react-bootstrap";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Carousel = () => {
+  const navigate = useNavigate();
+
   const settings = {
     dots: true,
     infinite: true,
@@ -37,18 +41,19 @@ const Carousel = () => {
             </a>
           </div>
 
-          <div className="booking-form">
+          <div className="booking-form" style={{ height: "30%" }}>
             <h3>Booking Your Hotel</h3>
             <form action="#">
-              <div className="check-date">
+              <p style={{ paddingLeft: "8%" }}>Check All Available Rooms</p>
+              {/* <div className="check-date">
                 <label htmlFor="date-in">Check In:</label>
                 <Form.Control type="date" />
-                {/* <i className="icon_calendar"></i> */}
+                <i className="icon_calendar"></i>
               </div>
               <div className="check-date">
                 <label htmlFor="date-out">Check Out:</label>
                 <Form.Control type="date" />
-                {/* <i className="icon_calendar"></i> */}
+                 <i className="icon_calendar"></i> }
               </div>
               <div className="select-option">
                 <label htmlFor="guest">Guests:</label>
@@ -68,7 +73,7 @@ const Carousel = () => {
                   <option value="">2 Adults</option>
                   <option value="">3 Adults</option>
                 </select>
-              </div>
+              </div> */}
               {/* <div className="select-option">
                 <label htmlFor="room">Room:</label>
                 <select
@@ -88,7 +93,9 @@ const Carousel = () => {
                   <option value="">2 Room</option>
                 </select>
               </div> */}
-              <button type="submit">Check Availability</button>
+              <button type="submit" onClick={() => navigate("/rooms")}>
+                Check Availability
+              </button>
             </form>
           </div>
         </div>

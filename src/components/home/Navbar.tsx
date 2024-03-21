@@ -1,7 +1,10 @@
+import React from "react";
 import flag from "../../assets/img/flag.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+
   return (
     <>
       {/* <div id="preloder">
@@ -41,16 +44,16 @@ const Navbar = () => {
         </div>
         <nav className="mainmenu mobile-menu">
           <ul>
-            <li className="active">
+            <li className={location.pathname === "/" ? "active" : ""}>
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className={location.pathname === "/rooms" ? "active" : ""}>
               <Link to="/rooms">Rooms</Link>
             </li>
-            <li>
+            <li className={location.pathname === "/book" ? "active" : ""}>
               <Link to="/book">Book</Link>
             </li>
-            <li>
+            <li className={location.pathname === "/contact" ? "active" : ""}>
               <Link to="/contact">Contact</Link>
             </li>
           </ul>
@@ -141,7 +144,7 @@ const Navbar = () => {
                 <div className="logo">
                   <a href="./index.html">
                     {/* <img src="img/logo.png" alt="" /> */}
-                    <p>TEST LOGO</p>
+                    {/* <p>TEST LOGO</p> */}
                   </a>
                 </div>
               </div>
@@ -149,16 +152,28 @@ const Navbar = () => {
                 <div className="nav-menu">
                   <nav className="mainmenu">
                     <ul>
-                      <li className="active">
+                      <li className={location.pathname === "/" ? "active" : ""}>
                         <Link to="/">Home</Link>
                       </li>
-                      <li>
+                      <li
+                        className={
+                          location.pathname === "/rooms" ? "active" : ""
+                        }
+                      >
                         <Link to="/rooms">Rooms</Link>
                       </li>
-                      <li>
+                      <li
+                        className={
+                          location.pathname === "/book" ? "active" : ""
+                        }
+                      >
                         <Link to="/book">Book</Link>
                       </li>
-                      <li>
+                      <li
+                        className={
+                          location.pathname === "/contact" ? "active" : ""
+                        }
+                      >
                         <Link to="/contact">Contact</Link>
                       </li>
                     </ul>

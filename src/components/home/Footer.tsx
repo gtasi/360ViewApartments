@@ -1,3 +1,5 @@
+import React from "react";
+
 const Footer = () => {
   return (
     <div>
@@ -5,11 +7,11 @@ const Footer = () => {
         <div className="container">
           <div className="footer-text">
             <div className="row">
-              <div className="col-lg-4">
-                <div className="ft-about">
+              {/*<div className="col-lg-4">
+                 <div className="ft-about">
                   <div className="logo">
                     <a href="#">
-                      {/* <img src="img/footer-logo.png" alt="" /> */}
+                       <img src="img/footer-logo.png" alt="" /> 
                       <p>Test</p>
                     </a>
                   </div>
@@ -36,8 +38,8 @@ const Footer = () => {
                     </a>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-3 offset-lg-1">
+              </div> */}
+              <div className="col-lg-3">
                 <div className="ft-contact">
                   <h6>Contact Us</h6>
                   <ul>
@@ -47,7 +49,7 @@ const Footer = () => {
                   </ul>
                 </div>
               </div>
-              <div className="col-lg-3 offset-lg-1">
+              {/* <div className="col-lg-3 offset-lg-1">
                 <div className="ft-newslatter">
                   <h6>New latest</h6>
                   <p>Get the latest updates and offers.</p>
@@ -58,11 +60,11 @@ const Footer = () => {
                     </button>
                   </form>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
-        <div className="copyright-option">
+        {/* <div className="copyright-option">
           <div className="container">
             <div className="row">
               <div className="col-lg-7">
@@ -96,7 +98,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </footer>
       <div className="search-model">
         <div className="h-100 d-flex align-items-center justify-content-center">

@@ -2,6 +2,7 @@ import { collection, getDocs } from "firebase/firestore/lite";
 import { useEffect, useState } from "react";
 import db from "../../backend/firebaseConfig";
 import RoomData from "./RoomData";
+import React from "react";
 
 interface IRoom {
   id: string;

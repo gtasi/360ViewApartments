@@ -117,7 +117,7 @@ const Book = () => {
 
     const startDate = new Date(checkInDate);
     const endDate = new Date(checkOutDate);
-    const numberOfDays = (endDate - startDate) / (1000 * 60 * 60 * 24); // Calculate number of days
+    const numberOfDays: any = (endDate - startDate) / (1000 * 60 * 60 * 24); // Calculate number of days
 
     // Find the selected room based on the selectedRoom ID
     const selectedRoomData = rooms.find((room) => room.id === selectedRoom);

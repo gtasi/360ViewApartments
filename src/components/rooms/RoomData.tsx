@@ -40,17 +40,22 @@ const RoomData = ({
                 <td className="r-o">Size:</td>
                 <td>{size} ㎡</td>
               </tr>
+              <br />
               <tr>
                 <td className="r-o">Capacity:</td>
                 <td>Max person {capacity}</td>
               </tr>
+              <br />
               <tr>
                 <td className="r-o">Bed:</td>
                 <td>{bed}</td>
               </tr>
+              <br />
               <tr>
-                <td className="r-o">Services:</td>
-                <td>{services}</td>
+                <td className="r-o" style={{ paddingBottom: 320 }}>
+                  Services:
+                </td>
+                <td style={{ paddingTop: "0%" }}>{services}</td>
               </tr>
             </tbody>
           </table>

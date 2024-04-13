@@ -36,9 +36,9 @@ const Carousel = () => {
               Here are the best hotel booking sites, including recommendations
               for international travel and for finding low-priced hotel rooms.
             </p>
-            <a href="#" className="primary-btn">
+            {/* <a href="#" className="primary-btn">
               Discover Now
-            </a>
+            </a> */}
           </div>
 
           <div className="booking-form" style={{ height: "30%" }}>
@@ -93,7 +93,7 @@ const Carousel = () => {
                   <option value="">2 Room</option>
                 </select>
               </div> */}
-              <button type="submit" onClick={() => navigate("/rooms")}>
+              <button type="submit" onClick={() => navigate("/book")}>
                 Check Availability
               </button>
             </form>

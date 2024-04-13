@@ -30,10 +30,7 @@ const Navbar = () => {
             <div className="flag-dropdown">
               <ul>
                 <li>
-                  <a href="#">Zi</a>
-                </li>
-                <li>
-                  <a href="#">Fr</a>
+                  <a href="#">AL</a>
                 </li>
               </ul>
             </div>
@@ -93,7 +90,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <i className="fa fa-envelope"></i>{" "}
-                    360viewappartments@gmail.com
+                    360viewapartments@gmail.com
                   </li>
                 </ul>
               </div>
@@ -124,10 +121,7 @@ const Navbar = () => {
                     <div className="flag-dropdown">
                       <ul>
                         <li>
-                          <a href="#">Zi</a>
-                        </li>
-                        <li>
-                          <a href="#">Fr</a>
+                          <a href="#">AL</a>
                         </li>
                       </ul>
                     </div>

@@ -12,6 +12,7 @@ import "./assets/css/slicknav.min.css";
 import "./assets/css/style.css";
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
+import "./i18n";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>

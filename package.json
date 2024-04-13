@@ -10,20 +10,28 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@stripe/firestore-stripe-payments": "^0.0.6",
+    "@stripe/stripe-js": "^3.3.0",
+    "date-fns-tz": "^3.0.0",
     "firebase": "^10.7.2",
+    "i18next": "^23.11.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.0",
     "react-calendar": "^4.8.0",
+    "react-checkmark": "^2.0.0",
     "react-date-picker": "^10.6.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^14.1.0",
+    "react-loader-spinner": "^6.1.6",
     "react-modern-calendar-datepicker": "^3.1.6",
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^6.22.3",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "stripe": "^14.24.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.5",

@@ -30,9 +30,9 @@ export const About = () => {
                     of every guest.
                   </p>
 
-                  <a href="#" className="primary-btn about-btn">
+                  {/* <a href="#" className="primary-btn about-btn">
                     Read More
-                  </a>
+                  </a> */}
                 </div>
               </div>
               <div className="col-lg-6">

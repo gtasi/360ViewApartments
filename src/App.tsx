@@ -10,6 +10,7 @@ import Contact from "./screens/Contact";
 import Navbar from "./components/home/Navbar";
 import Footer from "./components/home/Footer";
 import React from "react";
+import SuccessPage from "./screens/Success";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/book" element={<Book />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/success" element={<SuccessPage />} />
         </Routes>
         <Footer />
       </div>

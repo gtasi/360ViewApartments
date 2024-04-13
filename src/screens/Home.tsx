@@ -8,7 +8,9 @@ import React from "react";
 const Home = () => {
   return (
     <>
-      <Carousel />
+      <div style={{ paddingTop: "5%" }}>
+        <Carousel />
+      </div>
       <div style={{ paddingTop: "5%" }}>
         <About />
       </div>

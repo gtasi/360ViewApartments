@@ -1,6 +1,7 @@
 import { collection, getDocs, query, where } from "firebase/firestore/lite";
 import React, { useEffect, useState } from "react";
 import db from "../backend/firebaseConfig";
+import { loadStripe } from "@stripe/stripe-js";
 
 interface IRoom {
   id: string;
@@ -12,6 +13,10 @@ interface IRoom {
   services: string;
   image: string;
 }
+
+const stripeApi = loadStripe(
+  "pk_test_51Of2DiGIGymjAS46MwR1i3NWDgLiGXQm0kxdqBD5gEjQgHxCMv8DJYw2o28M1tzSdIEjf2fR7z1vj78kWHAgccPU00BBTzaj6W"
+);
 
 const Book = () => {
   // State variables to hold form data
@@ -111,13 +116,53 @@ const Book = () => {
     calculateTotalPay();
   }, [checkInDate, checkOutDate, selectedRoom, rooms]);
 
+  const handleBooking = async () => {
+    try {
+      const response = await fetch(
+        "https://us-central1-viewapartments-3b4fc.cloudfunctions.net/createStripePayment",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            email,
+            phoneNumber,
+            checkInDate,
+            checkOutDate,
+            selectedRoom,
+            totalPay,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to initiate payment");
+      }
+
+      const data = await response.json();
+      const url = data.paymentUrl;
+
+      if (url) {
+        window.location.href = url; // Redirect the user to the Stripe Checkout page
+      } else {
+        throw new Error("Invalid payment URL");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      // Handle error
+    }
+  };
+
   // Function to calculate total pay based on the number of days
   const calculateTotalPay = () => {
     if (!checkInDate || !checkOutDate) return; // Return if either check-in or check-out date is not set
 
     const startDate = new Date(checkInDate);
     const endDate = new Date(checkOutDate);
-    const numberOfDays: any = (endDate - startDate) / (1000 * 60 * 60 * 24); // Calculate number of days
+    const numberOfDays = (endDate - startDate) / (1000 * 60 * 60 * 24); // Calculate number of days
 
     // Find the selected room based on the selectedRoom ID
     const selectedRoomData = rooms.find((room) => room.id === selectedRoom);
@@ -281,7 +326,11 @@ const Book = () => {
                 readOnly
               />
             </div>
-            <button type="submit" className="btn-sm me-3">
+            <button
+              type="submit"
+              className="btn-sm me-3"
+              onClick={handleBooking}
+            >
               Book Now
             </button>
           </form>

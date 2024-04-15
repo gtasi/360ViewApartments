@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const ContactForm = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <>
       <section className="contact-section spad">
@@ -6,7 +10,7 @@ const ContactForm = () => {
           <div className="row">
             <div className="col-lg-4">
               <div className="contact-text">
-                <h2>Contact Info</h2>
+                <h2>{t("Contact Info")}</h2>
                 {/* <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -14,19 +18,19 @@ const ContactForm = () => {
                 <table>
                   <tbody>
                     <tr>
-                      <td className="c-o">Address:</td>
+                      <td className="c-o">{t("Address")}:</td>
                       <td>856 Cordia Extension Apt. 356, Lake, US</td>
                     </tr>
                     <tr>
-                      <td className="c-o">Phone:</td>
+                      <td className="c-o">{t("Phone")}:</td>
                       <td>(12) 345 67890</td>
                     </tr>
                     <tr>
-                      <td className="c-o">Email:</td>
+                      <td className="c-o">{t("Email")}:</td>
                       <td>360viewappartments@gmail.com</td>
                     </tr>
                     <tr>
-                      <td className="c-o">Fax:</td>
+                      <td className="c-o">{t("Fax")}:</td>
                       <td>+(12) 345 67890</td>
                     </tr>
                   </tbody>
@@ -44,7 +48,7 @@ const ContactForm = () => {
                   </div>
                   <div className="col-lg-12">
                     <textarea placeholder="Your Message"></textarea>
-                    <button type="submit">Submit Now</button>
+                    <button type="submit">{t("Submit Now")}</button>
                   </div>
                 </div>
               </form>

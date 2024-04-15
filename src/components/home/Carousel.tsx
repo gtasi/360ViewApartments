@@ -8,9 +8,11 @@ import "../../App.css";
 import { Form } from "react-bootstrap";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Carousel = () => {
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   const settings = {
     dots: true,
@@ -33,8 +35,9 @@ const Carousel = () => {
           <div className="hero-text">
             <h1>360° View Apartments</h1>
             <p>
-              Here are the best hotel booking sites, including recommendations
-              for international travel and for finding low-priced hotel rooms.
+              {t(
+                "Here are the best hotel booking sites, including recommendations for international travel and for finding low-priced hotel rooms."
+              )}
             </p>
             {/* <a href="#" className="primary-btn">
               Discover Now
@@ -42,9 +45,11 @@ const Carousel = () => {
           </div>
 
           <div className="booking-form" style={{ height: "30%" }}>
-            <h3>Booking Your Hotel</h3>
+            <h3>{t("Booking Your Hotel")}</h3>
             <form action="#">
-              <p style={{ paddingLeft: "8%" }}>Check All Available Rooms</p>
+              <p style={{ paddingLeft: "8%" }}>
+                {t("Check All Available Rooms")}
+              </p>
               {/* <div className="check-date">
                 <label htmlFor="date-in">Check In:</label>
                 <Form.Control type="date" />
@@ -94,7 +99,7 @@ const Carousel = () => {
                 </select>
               </div> */}
               <button type="submit" onClick={() => navigate("/book")}>
-                Check Availability
+                {t("CHECK AVAILABILITY")}
               </button>
             </form>
           </div>

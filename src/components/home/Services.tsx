@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const Services = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <>
       <section className="services-section spad">
@@ -6,8 +10,8 @@ const Services = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="section-title">
-                <span>What We Do</span>
-                <h2>Discover Our Services</h2>
+                <span>{t("What We Do")}</span>
+                <h2>{t("Discover Our Services")}</h2>
               </div>
             </div>
           </div>
@@ -15,7 +19,7 @@ const Services = () => {
             <div className="col-lg-4 col-sm-6">
               <div className="service-item">
                 <i className="flaticon-036-parking"></i>
-                <h4>Travel Plan</h4>
+                <h4>{t("Travel Plan")}</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.
@@ -25,7 +29,7 @@ const Services = () => {
             <div className="col-lg-4 col-sm-6">
               <div className="service-item">
                 <i className="flaticon-033-dinner"></i>
-                <h4>Catering Service</h4>
+                <h4>{t("Catering Service")}</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.
@@ -55,7 +59,7 @@ const Services = () => {
             <div className="col-lg-4 col-sm-6">
               <div className="service-item">
                 <i className="flaticon-044-clock-1"></i>
-                <h4>Parking Slot</h4>
+                <h4>{t("Parking Slot")}</h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna.

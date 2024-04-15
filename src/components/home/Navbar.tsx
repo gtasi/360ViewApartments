@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import flag from "../../assets/img/flag.jpg";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    localStorage.getItem("language") || "en"
+  );
+
+  const handleLanguageChange = (selectedValue: string) => {
+    i18n.changeLanguage(selectedValue);
+    localStorage.setItem("language", selectedValue);
+    setSelectedLanguage(selectedValue);
+  };
+
+  useEffect(() => {
+    i18n.changeLanguage(selectedLanguage);
+  }, [i18n, selectedLanguage]);
 
   return (
     <>
@@ -23,20 +38,46 @@ const Navbar = () => {
         </div>
         <div className="header-configure-area">
           <div className="language-option">
-            <img src={flag} alt="" />
             <span>
-              EN <i className="fa fa-angle-down"></i>
+              {t("EN")} <i className="fa fa-angle-down"></i>
             </span>
             <div className="flag-dropdown">
               <ul>
                 <li>
-                  <a href="#">AL</a>
+                  <a href="#" onClick={() => handleLanguageChange("en")}>
+                    EN
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={() => handleLanguageChange("al")}>
+                    AL
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={() => handleLanguageChange("hol")}>
+                    HOL
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={() => handleLanguageChange("kos")}>
+                    KOS
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={() => handleLanguageChange("pl")}>
+                    PL
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={() => handleLanguageChange("SP")}>
+                    SP
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
           <a href="#" className="bk-btn">
-            Booking Now
+            {t("BOOKING NOW")}
           </a>
         </div>
         <nav className="mainmenu mobile-menu">
@@ -60,12 +101,12 @@ const Navbar = () => {
           <a href="#">
             <i className="fa fa-facebook"></i>
           </a>
-          <a href="#">
+          {/* <a href="#">
             <i className="fa fa-twitter"></i>
           </a>
           <a href="#">
             <i className="fa fa-tripadvisor"></i>
-          </a>
+          </a> */}
           <a href="#">
             <i className="fa fa-instagram"></i>
           </a>
@@ -100,28 +141,72 @@ const Navbar = () => {
                     <a href="#">
                       <i className="fa fa-facebook"></i>
                     </a>
-                    <a href="#">
+                    {/*  <a href="#">
                       <i className="fa fa-twitter"></i>
                     </a>
                     <a href="#">
                       <i className="fa fa-tripadvisor"></i>
-                    </a>
+                    </a> */}
                     <a href="#">
                       <i className="fa fa-instagram"></i>
                     </a>
                   </div>
                   <a href="#" className="bk-btn">
-                    Booking Now
+                    {t("BOOKING NOW")}
                   </a>
                   <div className="language-option">
-                    <img src={flag} alt="" />
                     <span>
-                      EN <i className="fa fa-angle-down"></i>
+                      {t(selectedLanguage)} <i className="fa fa-angle-down"></i>
                     </span>
                     <div className="flag-dropdown">
                       <ul>
                         <li>
-                          <a href="#">AL</a>
+                          <a
+                            href="#"
+                            onClick={() => handleLanguageChange("en")}
+                          >
+                            EN
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            onClick={() => handleLanguageChange("al")}
+                          >
+                            AL
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            onClick={() => handleLanguageChange("hol")}
+                          >
+                            HOL
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            onClick={() => handleLanguageChange("kos")}
+                          >
+                            KOS
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            onClick={() => handleLanguageChange("pl")}
+                          >
+                            PL
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            onClick={() => handleLanguageChange("sp")}
+                          >
+                            SP
+                          </a>
                         </li>
                       </ul>
                     </div>

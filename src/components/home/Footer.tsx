@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div>
       <footer className="footer-section">
@@ -41,7 +44,7 @@ const Footer = () => {
               </div> */}
               <div className="col-lg-3">
                 <div className="ft-contact">
-                  <h6>Contact Us</h6>
+                  <h6>{t("CONTACT US")}</h6>
                   <ul>
                     <li>(12) 345 67890</li>
                     <li>360viewappartments@gmail.com</li>

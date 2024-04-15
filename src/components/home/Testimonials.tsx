@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bookingLogo from "../../assets/img/booking.png";
+import { useTranslation } from "react-i18next";
 
 const Testimonials = () => {
   const settings = {
@@ -17,14 +18,16 @@ const Testimonials = () => {
     autoplaySpeed: 2250,
   };
 
+  const { t, i18n } = useTranslation();
+
   return (
     <section className="testimonial-section spad">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
             <div className="section-title">
-              <span>Testimonials</span>
-              <h2>What Customers Say?</h2>
+              <span>{t("Testimonials")}</span>
+              <h2>{t("What Customers Say?")}</h2>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import { collection, getDocs, query, where } from "firebase/firestore/lite";
 import React, { useEffect, useState } from "react";
 import db from "../backend/firebaseConfig";
 import { loadStripe } from "@stripe/stripe-js";
+import { useTranslation } from "react-i18next";
 
 interface IRoom {
   id: string;
@@ -19,6 +20,7 @@ const stripeApi = loadStripe(
 );
 
 const Book = () => {
+  const { t, i18n } = useTranslation();
   // State variables to hold form data
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -202,7 +204,7 @@ const Book = () => {
             <div className="row">
               <div className="col-md-6 mb-3">
                 <label htmlFor="firstName" className="form-label">
-                  First Name
+                  {t("First Name")}
                 </label>
                 <input
                   type="text"
@@ -216,7 +218,7 @@ const Book = () => {
               </div>
               <div className="col-md-6 mb-3">
                 <label htmlFor="lastName" className="form-label">
-                  Last Name
+                  {t("Last Name")}
                 </label>
                 <input
                   type="text"
@@ -232,7 +234,7 @@ const Book = () => {
             <div className="row">
               <div className="col-md-6 mb-3">
                 <label htmlFor="email" className="form-label">
-                  Your Email
+                  {t("Your Email")}
                 </label>
                 <input
                   type="email"
@@ -246,7 +248,7 @@ const Book = () => {
               </div>
               <div className="col-md-6 mb-3">
                 <label htmlFor="phoneNumber" className="form-label">
-                  Phone Number
+                  {t("Phone Number")}
                 </label>
                 <input
                   type="tel"
@@ -262,7 +264,7 @@ const Book = () => {
             <div className="row">
               <div className="col-md-6 mb-3">
                 <label htmlFor="checkIn" className="form-label">
-                  Check-in Date
+                  {t("Check-in Date")}
                 </label>
                 <input
                   type="date"
@@ -275,7 +277,7 @@ const Book = () => {
               </div>
               <div className="col-md-6 mb-3">
                 <label htmlFor="checkOut" className="form-label">
-                  Check-out Date
+                  {t("Check-out Date")}
                 </label>
                 <input
                   type="date"
@@ -296,7 +298,7 @@ const Book = () => {
             )}
             <div className="mb-3">
               <label htmlFor="selectedRoom" className="form-label">
-                Select Room:
+                {t("Select Room")}:
               </label>
               <select
                 className="form-select"
@@ -305,7 +307,7 @@ const Book = () => {
                 onChange={(e) => setSelectedRoom(e.target.value)}
                 required
               >
-                <option value="">Select Room</option>
+                <option value="">{t("Select Room")}</option>
                 {/* Map over the rooms array and generate options */}
                 {rooms.map((room) => (
                   <option key={room.id} value={room.id}>
@@ -316,7 +318,7 @@ const Book = () => {
             </div>
             <div className="mb-3">
               <label htmlFor="totalPay" className="form-label">
-                Total Pay
+                {t("Total Pay")}
               </label>
               <input
                 type="text"
@@ -331,7 +333,7 @@ const Book = () => {
               className="btn-sm me-3"
               onClick={handleBooking}
             >
-              Book Now
+              {t("Book Now")}
             </button>
           </form>
         </div>

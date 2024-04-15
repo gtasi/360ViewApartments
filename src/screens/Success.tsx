@@ -1,18 +1,15 @@
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import db from "../backend/firebaseConfig";
 import {
   collection,
   doc,
   getDoc,
-  getDocs,
-  query,
-  where,
   setDoc,
   Timestamp,
 } from "firebase/firestore/lite";
+import { useEffect, useState } from "react";
 import { Checkmark } from "react-checkmark";
 import { InfinitySpin } from "react-loader-spinner";
+import { useLocation } from "react-router-dom";
+import db from "../backend/firebaseConfig";
 
 const SuccessPage = () => {
   const location = useLocation();

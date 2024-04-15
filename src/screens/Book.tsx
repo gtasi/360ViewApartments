@@ -1,8 +1,8 @@
-import { collection, getDocs, query, where } from "firebase/firestore/lite";
-import React, { useEffect, useState } from "react";
-import db from "../backend/firebaseConfig";
 import { loadStripe } from "@stripe/stripe-js";
+import { collection, getDocs } from "firebase/firestore/lite";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import db from "../backend/firebaseConfig";
 
 interface IRoom {
   id: string;

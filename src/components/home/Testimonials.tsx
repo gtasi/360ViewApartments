@@ -1,9 +1,8 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import bookingLogo from "../../assets/img/booking.png";
 import { useTranslation } from "react-i18next";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import bookingLogo from "../../assets/img/booking.png";
 
 const Testimonials = () => {
   const settings = {

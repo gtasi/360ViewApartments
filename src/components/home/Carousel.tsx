@@ -1,14 +1,12 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import "../../App.css";
 import hero1 from "../../assets/img/hero/hero-1.jpg";
 import hero2 from "../../assets/img/hero/hero-2.jpg";
 import hero3 from "../../assets/img/hero/hero-3.jpg";
-import "../../App.css";
-import { Form } from "react-bootstrap";
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 
 const Carousel = () => {
   const navigate = useNavigate();
